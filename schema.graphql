@@ -24,3 +24,39 @@ type Swap @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+
+type Candle @entity(immutable: true) {
+  id: Bytes! # token0 + token1 + duration + timestamp
+
+  token0: Bytes! # address
+  token1: Bytes! # address
+  duration: BigInt!
+  timestamp: BigInt!
+  
+  open0: BigInt!
+  open1: BigInt!
+  close0: BigInt!
+  close1: BigInt!
+  high0: BigInt!
+  high1: BigInt!
+  low0: BigInt!
+  low1: BigInt!
+}
+
+type LastCandle @entity {
+  id: Bytes! # token0 + token1 + duration
+
+  token0: Bytes! # address
+  token1: Bytes! # address
+  duration: BigInt!
+  timestamp: BigInt!
+  
+  open0: BigInt!
+  open1: BigInt!
+  close0: BigInt!
+  close1: BigInt!
+  high0: BigInt!
+  high1: BigInt!
+  low0: BigInt!
+  low1: BigInt!
+}
