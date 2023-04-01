@@ -12,8 +12,8 @@ export function handleSwapV2(event: SwapEvent): void {
   swap.pool = event.address
   swap.token0 = pool.token0
   swap.token1 = pool.token1
-  swap.amount0 = event.params.amount0In.minus(event.params.amount0Out)
-  swap.amount1 = event.params.amount1In.minus(event.params.amount1Out)
+  swap.amount0 = event.params.amount0In.minus(event.params.amount0Out).abs()
+  swap.amount1 = event.params.amount1In.minus(event.params.amount1Out).abs()
 
   swap.blockNumber = event.block.number
   swap.blockTimestamp = event.block.timestamp

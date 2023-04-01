@@ -12,8 +12,8 @@ export function handleSwapV3(event: SwapEvent): void {
   swap.pool = event.address
   swap.token0 = pool.token0
   swap.token1 = pool.token1
-  swap.amount0 = event.params.amount0
-  swap.amount1 = event.params.amount1
+  swap.amount0 = event.params.amount0.abs()
+  swap.amount1 = event.params.amount1.abs()
 
   swap.blockNumber = event.block.number
   swap.blockTimestamp = event.block.timestamp
