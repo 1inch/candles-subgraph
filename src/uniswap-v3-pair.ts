@@ -21,5 +21,7 @@ export function handleSwapV3(event: SwapEvent): void {
 
   fillCandles(swap)
 
-  swap.save()
+  if (!swap.amount0.isZero() && !swap.amount1.isZero()) {
+    swap.save()
+  }
 }

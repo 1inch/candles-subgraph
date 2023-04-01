@@ -3,6 +3,9 @@ import { Swap, Pool } from "../generated/schema"
 import { Candle, LastCandle } from "../generated/schema"
 
 export function fillCandles(swap: Swap): void {
+    if (swap.amount0.isZero() || swap.amount1.isZero()) {
+        return;
+    }
     const price = new BigDecimal(swap.amount0).div(new BigDecimal(swap.amount1))
 
     const durations = [5*60, 30*60, 60*60, 4*60*60, 24*60*60]
