@@ -3,7 +3,6 @@ type Pool @entity(immutable: true) {
   token0: Bytes! # address
   token1: Bytes! # address
   fee: Int! # uint24
-  tickSpacing: Int! # int24
   pool: Bytes! # address
 
   blockNumber: BigInt!

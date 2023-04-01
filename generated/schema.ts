@@ -69,15 +69,6 @@ export class Pool extends Entity {
     this.set("fee", Value.fromI32(value));
   }
 
-  get tickSpacing(): i32 {
-    let value = this.get("tickSpacing");
-    return value!.toI32();
-  }
-
-  set tickSpacing(value: i32) {
-    this.set("tickSpacing", Value.fromI32(value));
-  }
-
   get pool(): Bytes {
     let value = this.get("pool");
     return value!.toBytes();

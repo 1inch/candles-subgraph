@@ -7,10 +7,9 @@ export function handlePoolCreatedV3(event: PoolCreatedEvent): void {
 
   entity.token0 = event.params.token0
   entity.token1 = event.params.token1
-  entity.fee = event.params.fee
-  entity.tickSpacing = event.params.tickSpacing
   entity.pool = event.params.pool
-
+  entity.fee = event.params.fee
+  
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
   entity.transactionHash = event.transaction.hash
