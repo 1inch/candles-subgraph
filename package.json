@@ -1,5 +1,5 @@
 {
-  "name": "erc20-prices",
+  "name": "token-prices-subgraph",
   "license": "UNLICENSED",
   "scripts": {
     "codegen": "graph codegen",

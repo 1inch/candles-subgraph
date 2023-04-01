@@ -50,7 +50,7 @@ templates:
       abi: UniswapV2Pair
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.7
       language: wasm/assemblyscript
       file: ./src/uniswap-v2-pair.ts
       entities:
@@ -68,7 +68,7 @@ templates:
       abi: UniswapV3Pair
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.7
       language: wasm/assemblyscript
       file: ./src/uniswap-v3-pair.ts
       entities:
