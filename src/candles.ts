@@ -1,5 +1,5 @@
-import { BigDecimal, BigInt, Bytes } from "@graphprotocol/graph-ts"
-import { Swap, Pool } from "../generated/schema"
+import { BigDecimal, BigInt } from "@graphprotocol/graph-ts"
+import { Swap } from "../generated/schema"
 import { Candle, LastCandle } from "../generated/schema"
 
 export function fillCandles(swap: Swap): void {
@@ -32,15 +32,16 @@ export function fillCandles(swap: Swap): void {
     }
 
     if (swap.blockTimestamp.lt(last.timestamp.plus(durationBigInt))) {
-      const priceTimesVolume = swapPrice.times(swapVolume)
-      const sumVolume = last.volume.plus(swapVolume)
-
-      last.close = last.close.times(last.volume).plus(priceTimesVolume).div(sumVolume);
+      last.close = swapPrice
       if (swapPrice.lt(last.low)) {
-        last.low = last.low.times(last.volume).plus(priceTimesVolume).div(sumVolume);
+        last.low = last.low.times(last.volume)
+          .plus(swapPrice.times(swapVolume))
+          .div(last.volume.plus(swapVolume));
       }
       if (swapPrice.gt(last.high)) {
-        last.high = last.high.times(last.volume).plus(priceTimesVolume).div(sumVolume);
+        last.high = last.high.times(last.volume)
+          .plus(swapPrice.times(swapVolume))
+          .div(last.volume.plus(swapVolume));
       }
     }
     else if (swap.blockTimestamp.gt(last.timestamp.plus(durationBigInt))) {
