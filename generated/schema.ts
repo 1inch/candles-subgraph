@@ -42,6 +42,15 @@ export class Pool extends Entity {
     this.set("id", Value.fromBytes(value));
   }
 
+  get pool(): Bytes {
+    let value = this.get("pool");
+    return value!.toBytes();
+  }
+
+  set pool(value: Bytes) {
+    this.set("pool", Value.fromBytes(value));
+  }
+
   get token0(): Bytes {
     let value = this.get("token0");
     return value!.toBytes();
@@ -67,15 +76,6 @@ export class Pool extends Entity {
 
   set fee(value: i32) {
     this.set("fee", Value.fromI32(value));
-  }
-
-  get pool(): Bytes {
-    let value = this.get("pool");
-    return value!.toBytes();
-  }
-
-  set pool(value: Bytes) {
-    this.set("pool", Value.fromBytes(value));
   }
 
   get blockNumber(): BigInt {

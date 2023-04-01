@@ -6,11 +6,11 @@ export function handleSwapV3(event: SwapEvent): void {
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
 
-  const pool = new Pool(event.address);
+  const pool = Pool.load(event.address)!
 
+  entity.pool = event.address
   entity.token0 = pool.token0
   entity.token1 = pool.token1
-  entity.pool = event.address
   entity.amount0 = event.params.amount0
   entity.amount1 = event.params.amount1
 

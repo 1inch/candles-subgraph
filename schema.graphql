@@ -1,9 +1,10 @@
 type Pool @entity(immutable: true) {
   id: Bytes!
+
+  pool: Bytes! # address
   token0: Bytes! # address
   token1: Bytes! # address
   fee: Int! # uint24
-  pool: Bytes! # address
 
   blockNumber: BigInt!
   blockTimestamp: BigInt!
@@ -12,6 +13,7 @@ type Pool @entity(immutable: true) {
 
 type Swap @entity(immutable: true) {
   id: Bytes!
+
   pool: Bytes! # address
   token0: Bytes! # address
   token1: Bytes! # address

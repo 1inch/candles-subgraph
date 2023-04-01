@@ -5,9 +5,9 @@ import { UniswapV2Pair as PairTemplate } from "../generated/templates"
 export function handlePairCreatedV2(event: PairCreatedEvent): void {
   const entity = new Pool(event.params.pair)
 
+  entity.pool = event.params.pair
   entity.token0 = event.params.token0
   entity.token1 = event.params.token1
-  entity.pool = event.params.pair
   entity.fee = 3000 // 0.3% for Uniswap V2
 
   entity.blockNumber = event.block.number

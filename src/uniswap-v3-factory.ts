@@ -5,9 +5,9 @@ import { UniswapV3Pair as PairTemplate } from "../generated/templates"
 export function handlePoolCreatedV3(event: PoolCreatedEvent): void {
   const entity = new Pool(event.params.pool)
 
+  entity.pool = event.params.pool
   entity.token0 = event.params.token0
   entity.token1 = event.params.token1
-  entity.pool = event.params.pool
   entity.fee = event.params.fee
   
   entity.blockNumber = event.block.number
