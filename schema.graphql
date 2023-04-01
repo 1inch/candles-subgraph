@@ -46,6 +46,7 @@ type LastCandle @entity {
   token1: Bytes! # address
   duration: BigInt!
   timestamp: BigInt!
+  volume: BigDecimal!
   
   open: BigDecimal!
   close: BigDecimal!

@@ -383,6 +383,15 @@ export class LastCandle extends Entity {
     this.set("timestamp", Value.fromBigInt(value));
   }
 
+  get volume(): BigDecimal {
+    let value = this.get("volume");
+    return value!.toBigDecimal();
+  }
+
+  set volume(value: BigDecimal) {
+    this.set("volume", Value.fromBigDecimal(value));
+  }
+
   get open(): BigDecimal {
     let value = this.get("open");
     return value!.toBigDecimal();
