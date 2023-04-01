@@ -8,6 +8,7 @@ export function handlePairCreatedV2(event: PairCreatedEvent): void {
   entity.token0 = event.params.token0
   entity.token1 = event.params.token1
   entity.pool = event.params.pair
+  entity.fee = 3000 // 0.3% for Uniswap V2
 
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
