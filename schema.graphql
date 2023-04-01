@@ -33,14 +33,10 @@ type Candle @entity(immutable: true) {
   duration: BigInt!
   timestamp: BigInt!
   
-  open0: BigInt!
-  open1: BigInt!
-  close0: BigInt!
-  close1: BigInt!
-  high0: BigInt!
-  high1: BigInt!
-  low0: BigInt!
-  low1: BigInt!
+  open: BigDecimal!
+  close: BigDecimal!
+  low: BigDecimal!
+  high: BigDecimal!
 }
 
 type LastCandle @entity {
@@ -51,12 +47,8 @@ type LastCandle @entity {
   duration: BigInt!
   timestamp: BigInt!
   
-  open0: BigInt!
-  open1: BigInt!
-  close0: BigInt!
-  close1: BigInt!
-  high0: BigInt!
-  high1: BigInt!
-  low0: BigInt!
-  low1: BigInt!
+  open: BigDecimal!
+  close: BigDecimal!
+  low: BigDecimal!
+  high: BigDecimal!
 }

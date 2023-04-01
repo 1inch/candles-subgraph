@@ -277,76 +277,40 @@ export class Candle extends Entity {
     this.set("timestamp", Value.fromBigInt(value));
   }
 
-  get open0(): BigInt {
-    let value = this.get("open0");
-    return value!.toBigInt();
+  get open(): BigDecimal {
+    let value = this.get("open");
+    return value!.toBigDecimal();
   }
 
-  set open0(value: BigInt) {
-    this.set("open0", Value.fromBigInt(value));
+  set open(value: BigDecimal) {
+    this.set("open", Value.fromBigDecimal(value));
   }
 
-  get open1(): BigInt {
-    let value = this.get("open1");
-    return value!.toBigInt();
+  get close(): BigDecimal {
+    let value = this.get("close");
+    return value!.toBigDecimal();
   }
 
-  set open1(value: BigInt) {
-    this.set("open1", Value.fromBigInt(value));
+  set close(value: BigDecimal) {
+    this.set("close", Value.fromBigDecimal(value));
   }
 
-  get close0(): BigInt {
-    let value = this.get("close0");
-    return value!.toBigInt();
+  get low(): BigDecimal {
+    let value = this.get("low");
+    return value!.toBigDecimal();
   }
 
-  set close0(value: BigInt) {
-    this.set("close0", Value.fromBigInt(value));
+  set low(value: BigDecimal) {
+    this.set("low", Value.fromBigDecimal(value));
   }
 
-  get close1(): BigInt {
-    let value = this.get("close1");
-    return value!.toBigInt();
+  get high(): BigDecimal {
+    let value = this.get("high");
+    return value!.toBigDecimal();
   }
 
-  set close1(value: BigInt) {
-    this.set("close1", Value.fromBigInt(value));
-  }
-
-  get high0(): BigInt {
-    let value = this.get("high0");
-    return value!.toBigInt();
-  }
-
-  set high0(value: BigInt) {
-    this.set("high0", Value.fromBigInt(value));
-  }
-
-  get high1(): BigInt {
-    let value = this.get("high1");
-    return value!.toBigInt();
-  }
-
-  set high1(value: BigInt) {
-    this.set("high1", Value.fromBigInt(value));
-  }
-
-  get low0(): BigInt {
-    let value = this.get("low0");
-    return value!.toBigInt();
-  }
-
-  set low0(value: BigInt) {
-    this.set("low0", Value.fromBigInt(value));
-  }
-
-  get low1(): BigInt {
-    let value = this.get("low1");
-    return value!.toBigInt();
-  }
-
-  set low1(value: BigInt) {
-    this.set("low1", Value.fromBigInt(value));
+  set high(value: BigDecimal) {
+    this.set("high", Value.fromBigDecimal(value));
   }
 }
 
@@ -419,75 +383,39 @@ export class LastCandle extends Entity {
     this.set("timestamp", Value.fromBigInt(value));
   }
 
-  get open0(): BigInt {
-    let value = this.get("open0");
-    return value!.toBigInt();
+  get open(): BigDecimal {
+    let value = this.get("open");
+    return value!.toBigDecimal();
   }
 
-  set open0(value: BigInt) {
-    this.set("open0", Value.fromBigInt(value));
+  set open(value: BigDecimal) {
+    this.set("open", Value.fromBigDecimal(value));
   }
 
-  get open1(): BigInt {
-    let value = this.get("open1");
-    return value!.toBigInt();
+  get close(): BigDecimal {
+    let value = this.get("close");
+    return value!.toBigDecimal();
   }
 
-  set open1(value: BigInt) {
-    this.set("open1", Value.fromBigInt(value));
+  set close(value: BigDecimal) {
+    this.set("close", Value.fromBigDecimal(value));
   }
 
-  get close0(): BigInt {
-    let value = this.get("close0");
-    return value!.toBigInt();
+  get low(): BigDecimal {
+    let value = this.get("low");
+    return value!.toBigDecimal();
   }
 
-  set close0(value: BigInt) {
-    this.set("close0", Value.fromBigInt(value));
+  set low(value: BigDecimal) {
+    this.set("low", Value.fromBigDecimal(value));
   }
 
-  get close1(): BigInt {
-    let value = this.get("close1");
-    return value!.toBigInt();
+  get high(): BigDecimal {
+    let value = this.get("high");
+    return value!.toBigDecimal();
   }
 
-  set close1(value: BigInt) {
-    this.set("close1", Value.fromBigInt(value));
-  }
-
-  get high0(): BigInt {
-    let value = this.get("high0");
-    return value!.toBigInt();
-  }
-
-  set high0(value: BigInt) {
-    this.set("high0", Value.fromBigInt(value));
-  }
-
-  get high1(): BigInt {
-    let value = this.get("high1");
-    return value!.toBigInt();
-  }
-
-  set high1(value: BigInt) {
-    this.set("high1", Value.fromBigInt(value));
-  }
-
-  get low0(): BigInt {
-    let value = this.get("low0");
-    return value!.toBigInt();
-  }
-
-  set low0(value: BigInt) {
-    this.set("low0", Value.fromBigInt(value));
-  }
-
-  get low1(): BigInt {
-    let value = this.get("low1");
-    return value!.toBigInt();
-  }
-
-  set low1(value: BigInt) {
-    this.set("low1", Value.fromBigInt(value));
+  set high(value: BigDecimal) {
+    this.set("high", Value.fromBigDecimal(value));
   }
 }
