@@ -14,7 +14,18 @@ export function fillCandles(swap: Swap): void {
             last.token0 = swap.token0
             last.token1 = swap.token1
             last.duration = durationBigInt
-            last.timestamp = BigInt.zero()
+            
+            last.timestamp = swap.blockTimestamp
+                .div(durationBigInt)
+                .times(durationBigInt)
+            last.open0 = swap.amount0
+            last.open1 = swap.amount1
+            last.close0 = swap.amount0
+            last.close1 = swap.amount1
+            last.high0 = swap.amount0
+            last.high1 = swap.amount1
+            last.low0 = swap.amount0
+            last.low1 = swap.amount1
         }
 
         if (swap.blockTimestamp.lt(last.timestamp.plus(durationBigInt))) {
@@ -32,7 +43,6 @@ export function fillCandles(swap: Swap): void {
                 last.low0 = swap.amount0
                 last.low1 = swap.amount1
             }
-            last.save()
         }
         else if (swap.blockTimestamp.gt(last.timestamp.plus(durationBigInt))) {
             const candleId = last.token0.concat(last.token1).concatI32(durations[i]).concatI32(last.timestamp.toI32())
@@ -62,7 +72,7 @@ export function fillCandles(swap: Swap): void {
             last.high1 = swap.amount1
             last.low0 = swap.amount0
             last.low1 = swap.amount1
-            last.save()
         }
+        last.save()
     }
 }
